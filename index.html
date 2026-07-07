@@ -1,32 +1,267 @@
-# Check if the generated HTML file exists
-if not os.path.exists('cafetabidorado_landing.html'):
-    print("Error: The file 'cafetabidorado_landing.html' does not exist.")
-else:
-    # Read the content of the file
-    with open('cafetabidorado_landing.html', 'r', encoding='utf-8') as f:
-        content = f.read()
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Tabi Dorado | Lujo de Autor</title>
+    <style>
+        * {
+            box-spacing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0D130C; /* Verde olivo ultra oscuro */
+            color: #F4F6F4;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    # Define the search and replace strings
-    search_str = '🪶 Tabi Dorado'
-    replace_str = 'Tabi Dorado'
+        h1, h2, h3 {
+            font-family: 'Times New Roman', Times, serif;
+            color: #D4AF37; /* Dorado */
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
 
-    # Count occurrences before replacement for verification
-    count_before = content.count(search_str)
+        header {
+            display: table;
+            width: 100%;
+            padding: 20px 5%;
+            background-color: rgba(13, 19, 12, 0.9);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
 
-    # Perform the replacement
-    updated_content = content.replace(search_str, replace_str)
+        .header-cell {
+            display: table-cell;
+            vertical-align: middle;
+        }
 
-    # Count occurrences after replacement for verification
-    count_after = updated_content.count(search_str)
+        .logo {
+            display: inline-block;
+            vertical-align: middle;
+        }
 
-    # Check if any replacements were made
-    if count_before == 0:
-        print(f"Error: The string '{search_str}' was not found in the file.")
-    elif count_before == count_after:
-        print(f"Error: Replacement failed. Count before and after are the same ({count_before}).")
-    else:
-        # Write the updated content back to the file
-        with open('cafetabidorado_landing.html', 'w', encoding='utf-8') as f:
-            f.write(updated_content)
-        print(f"Success: The feather emoji was successfully removed from '{search_str}'.")
-        print(f"Occurrences found and replaced: {count_before}")
+        .logo img {
+            max-height: 55px; /* Ajuste perfecto para tu logo original */
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            text-align: right;
+        }
+
+        .nav-links a {
+            color: #F4F6F4;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 10.5pt;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #D4AF37;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 5% 120px 5%;
+            text-align: center;
+            background-image: linear-gradient(to bottom, rgba(13, 19, 12, 0.7), #0D130C), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .mountain-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            fill: #0D130C;
+            opacity: 0.15;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 28pt;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 12pt;
+            color: #E2E6E2;
+            margin-bottom: 40px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #D4AF37;
+            color: #0D130C;
+            text-decoration: none;
+            padding: 15px 35px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 10pt;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border: 1px solid #D4AF37;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #D4AF37;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 5%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 22pt;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 1px;
+            background-color: #D4AF37;
+            margin: 15px auto 0 auto;
+        }
+
+        .process-table {
+            width: 100%;
+            display: flex;
+            gap: 25px;
+            justify-content: space-between;
+        }
+
+        .process-card {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 35px 25px;
+            text-align: center;
+        }
+
+        .process-card h3 {
+            font-size: 14pt;
+            margin-bottom: 15px;
+            color: #D4AF37;
+        }
+
+        .process-card p {
+            font-size: 10pt;
+            color: #C2C6C2;
+            text-align: justify;
+        }
+
+        /* Products */
+        .product-table {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .product-card h3 {
+            font-size: 13pt;
+            margin-bottom: 10px;
+        }
+
+        .product-badge {
+            display: inline-block;
+            font-size: 8pt;
+            background-color: rgba(212, 175, 55, 0.1);
+            color: #D4AF37;
+            padding: 3px 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-price {
+            font-size: 16pt;
+            color: #F4F6F4;
+            margin: 15px 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .product-desc {
+            font-size: 9.5pt;
+            color: #B2B6B2;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: 8.5pt;
+            letter-spacing: 1px;
+            display: block;
+            text-align: center;
+        }
+
+        /* Global Expansion */
+        .global-box {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .global-box p {
+            font-size: 11pt;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #C2C6C2;
+        }
+
+        .countries-table {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        .country-item {
