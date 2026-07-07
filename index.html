@@ -14,8 +14,6 @@
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: #0D130C; /* Verde olivo ultra oscuro */
-            background-image: radial-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 0);
-            background-size: 24px 24px;
             color: #F4F6F4;
             line-height: 1.6;
             overflow-x: hidden;
@@ -28,7 +26,6 @@
             letter-spacing: 1px;
         }
 
-        /* Header / Navegación */
         header {
             display: table;
             width: 100%;
@@ -39,7 +36,6 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
 
         .header-cell {
@@ -47,15 +43,15 @@
             vertical-align: middle;
         }
 
-        .brand-container {
+        .brand-link {
             display: flex;
             align-items: center;
             text-decoration: none;
             gap: 12px;
         }
 
-        .brand-logo {
-            max-height: 48px;
+        .header-logo {
+            max-height: 45px;
             width: auto;
             display: block;
         }
@@ -63,10 +59,9 @@
         .brand-text {
             font-family: 'Times New Roman', Times, serif;
             color: #D4AF37;
-            font-size: 14pt;
-            letter-spacing: 3px;
+            font-size: 13pt;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            font-weight: normal;
         }
 
         .nav-links {
@@ -77,8 +72,8 @@
             color: #F4F6F4;
             text-decoration: none;
             margin-left: 25px;
-            font-size: 9.5pt;
-            letter-spacing: 2px;
+            font-size: 10.5pt;
+            letter-spacing: 1px;
             text-transform: uppercase;
             transition: color 0.3s;
         }
@@ -89,55 +84,65 @@
 
         /* Hero Section */
         .hero {
-            padding: 220px 5% 140px 5%;
+            padding: 200px 5% 140px 5%;
             text-align: center;
-            background-image: linear-gradient(to bottom, rgba(13, 19, 12, 0.6), #0D130C), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop'); /* reemplazado por hero-cafetal.jpg */
+            background-image: linear-gradient(to bottom, rgba(13, 19, 12, 0.6), #0D130C), url('img/hero-cafetal.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
         }
 
-        /* Sello marca de agua sutil en Hero */
         .hero-watermark {
-            max-height: 90px;
+            max-height: 80px;
             width: auto;
-            opacity: 0.25;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 4px rgba(212,175,55,0.2));
+            opacity: 0.15;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .mountain-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            fill: #0D130C;
+            opacity: 0.15;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 850px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .premium-badge {
+        .specialty-badge {
             display: inline-block;
             font-size: 8pt;
             border: 1px solid #D4AF37;
             color: #D4AF37;
-            padding: 5px 15px;
-            margin-bottom: 25px;
+            padding: 4px 12px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            background-color: rgba(13, 19, 12, 0.6);
+            letter-spacing: 2px;
+            background-color: rgba(13, 19, 12, 0.5);
         }
 
         .hero h1 {
-            font-size: 32pt;
-            line-height: 1.15;
+            font-size: 28pt;
+            line-height: 1.2;
             margin-bottom: 25px;
             text-transform: uppercase;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .hero p {
             font-size: 12pt;
             color: #E2E6E2;
-            margin-bottom: 45px;
-            max-width: 680px;
+            margin-bottom: 40px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -147,34 +152,21 @@
             background-color: #D4AF37;
             color: #0D130C;
             text-decoration: none;
-            padding: 16px 40px;
+            padding: 15px 35px;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 9.5pt;
+            font-size: 10pt;
             letter-spacing: 2px;
             transition: all 0.3s ease;
             border: 1px solid #D4AF37;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .btn:hover {
             background-color: transparent;
             color: #D4AF37;
-            box-shadow: 0 4px 20px rgba(212,175,55,0.2);
         }
 
-        .mountain-bg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 120px;
-            fill: #0A0E09;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Secciones Generales */
+        /* Sections */
         .section {
             padding: 100px 5%;
             position: relative;
@@ -183,172 +175,131 @@
 
         .section-title {
             text-align: center;
-            font-size: 24pt;
-            margin-bottom: 60px;
+            font-size: 22pt;
+            margin-bottom: 50px;
             text-transform: uppercase;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 80px;
+            width: 60px;
             height: 1px;
             background-color: #D4AF37;
-            margin: 18px auto 0 auto;
+            margin: 15px auto 0 auto;
         }
 
-        /* Separadores editoriales */
-        .editorial-line {
-            width: 100%;
-            max-width: 250px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.4), transparent);
-            margin: 40px auto;
-        }
-
-        /* Sección Origen (Editorial con Fotografía Completa) */
-        .story-container {
-            width: 100%;
-            max-width: 1100px;
+        /* Origen Layout */
+        .origen-grid {
+            display: flex;
+            max-width: 1000px;
             margin: 0 auto;
-            background-color: #0D130C;
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            display: table;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            gap: 40px;
+            align-items: center;
         }
 
-        .story-row {
-            display: table-row;
+        .origen-img-box {
+            flex: 1;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 8px;
         }
 
-        .story-image-cell, .story-text-cell {
-            display: table-cell;
-            width: 50%;
-            vertical-align: middle;
+        .origen-img-box img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
         }
 
-        .story-image-cell {
-            background-image: url('https://images.unsplash.com/photo-1596436889106-be35e843f974?q=80&w=800&auto=format&fit=crop'); /* reemplazado por caficultor-cosecha.jpg */
-            background-size: cover;
-            background-position: center;
-            min-height: 450px;
-        }
-
-        .story-text-cell {
-            padding: 60px;
-            background-color: rgba(10, 14, 9, 0.95);
-        }
-
-        .story-text-cell p {
-            font-size: 11.5pt;
-            color: #D2D6D2;
-            text-align: justify;
-            line-height: 1.8;
+        .origen-text-box {
+            flex: 1;
         }
 
         /* Proceso */
         .process-table {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
-            gap: 30px;
+            gap: 25px;
             justify-content: space-between;
         }
 
         .process-card {
             flex: 1;
-            background-color: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(212, 175, 55, 0.12);
-            padding: 0 0 35px 0;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 0 0 30px 0;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: border 0.3s;
         }
 
-        .process-card:hover {
-            border: 1px solid rgba(212, 175, 55, 0.4);
-        }
-
-        .process-img {
+        .process-card-img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
-            margin-bottom: 25px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         .process-card h3 {
             font-size: 14pt;
             margin-bottom: 15px;
             color: #D4AF37;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         .process-card p {
             font-size: 10pt;
             color: #C2C6C2;
             text-align: justify;
-            padding: 0 25px;
+            padding: 0 20px;
         }
 
-        /* Colección de Productos */
+        /* Products */
         .product-table {
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto 50px auto;
+            max-width: 1100px;
+            margin: 0 auto 40px auto;
             display: flex;
-            gap: 25px;
+            gap: 20px;
             justify-content: space-between;
         }
 
         .product-card {
             flex: 1;
-            background-color: rgba(10, 14, 9, 0.8);
+            background-color: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(212, 175, 55, 0.15);
-            padding: 35px 25px;
+            padding: 25px 20px;
             text-align: center;
-            position: relative;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 8px; left: 8px; right: 8px; bottom: 8px;
-            border: 1px solid rgba(212, 175, 55, 0.06);
-            pointer-events: none;
-        }
-
-        .product-img {
+        .product-card-img {
             width: 100%;
-            height: 240px;
-            object-fit: contain;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+            height: 220px;
+            object-fit: cover;
+            margin-bottom: 15px;
         }
 
         .product-card h3 {
-            font-size: 14pt;
+            font-size: 13pt;
             margin-bottom: 10px;
-            letter-spacing: 1px;
         }
 
         .product-badge {
             display: inline-block;
-            font-size: 7.5pt;
+            font-size: 8pt;
             background-color: rgba(212, 175, 55, 0.1);
             color: #D4AF37;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 4px 12px;
+            padding: 3px 10px;
             margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .product-price {
-            font-size: 18pt;
-            color: #D4AF37;
+            font-size: 16pt;
+            color: #F4F6F4;
             margin: 15px 0;
             font-family: 'Times New Roman', Times, serif;
         }
@@ -356,88 +307,56 @@
         .product-desc {
             font-size: 9.5pt;
             color: #B2B6B2;
-            margin-bottom: 25px;
-            min-height: 65px;
-            line-height: 1.5;
+            margin-bottom: 20px;
+            min-height: 60px;
         }
 
         .btn-sm {
-            padding: 12px 25px;
+            padding: 10px 20px;
             font-size: 8.5pt;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             display: block;
             text-align: center;
         }
 
-        /* Sección de Multimedia (Video de Preparación) */
-        .video-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
+        /* Video Area */
+        .media-container {
+            max-width: 700px;
+            margin: 60px auto 0 auto;
             border: 1px solid rgba(212, 175, 55, 0.2);
             padding: 10px;
-            background-color: rgba(10, 14, 9, 0.6);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            background-color: rgba(10, 14, 9, 0.4);
         }
 
-        video {
-            width: 100%;
-            height: auto;
-            display: block;
+        /* Testimonials standard container */
+        .testimonials-area {
+            max-width: 800px;
+            margin: 50px auto 0 auto;
+            border-top: 1px dashed rgba(212, 175, 55, 0.2);
+            padding-top: 30px;
         }
 
-        /* Testimonios (Placeholder Estructurado) */
-        .testimonials-container {
-            width: 100%;
-            max-width: 900px;
-            margin: 40px auto 0 auto;
-            display: flex;
-            gap: 20px;
-        }
-        .testimonial-item {
-            flex: 1;
-            background-color: rgba(255,255,255,0.02);
-            border-left: 2px solid #D4AF37;
-            padding: 20px;
-            font-style: italic;
-            font-size: 10pt;
-            color: #C2C6C2;
-        }
-
-        /* Expansión Global y Distribución */
+        /* Global Expansion */
         .global-box {
-            background-color: rgba(10, 14, 9, 0.85);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            padding: 50px;
-            max-width: 950px;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 40px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .global-box::before {
-            content: '';
-            position: absolute;
-            top: 10px; left: 10px; right: 10px; bottom: 10px;
-            border: 1px solid rgba(212, 175, 55, 0.05);
-            pointer-events: none;
         }
 
         .global-box p {
             font-size: 11pt;
-            max-width: 720px;
-            margin: 0 auto 35px auto;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
             color: #C2C6C2;
         }
 
         .countries-table {
             display: flex;
             justify-content: space-around;
-            margin-bottom: 45px;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            padding: 20px 0;
+            margin-bottom: 40px;
         }
 
         .country-item {
@@ -448,85 +367,85 @@
         }
 
         .distributor-cta {
-            border-top: 1px dashed rgba(212, 175, 55, 0.25);
-            padding-top: 35px;
+            border-top: 1px dashed rgba(212, 175, 55, 0.2);
+            padding-top: 30px;
             margin-top: 20px;
         }
 
         .distributor-cta h4 {
-            font-size: 17pt;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 15pt;
             color: #D4AF37;
-            margin-bottom: 12px;
-            text-transform: uppercase;
+            margin-bottom: 10px;
         }
 
-        /* Footer Monumental y Centrado */
+        /* Footer Redesigned & Centered */
         footer {
             background-color: #0A0E09;
-            padding: 80px 5% 40px 5%;
+            padding: 60px 5% 40px 5%;
             border-top: 1px solid rgba(212, 175, 55, 0.25);
             text-align: center;
         }
 
-        .footer-logo-center {
-            max-height: 85px;
+        .footer-logo {
+            max-height: 65px;
             width: auto;
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+
+        .footer-brand-name {
+            font-size: 16pt;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #D4AF37;
+            margin-bottom: 5px;
+        }
+
+        .footer-subtitle {
+            font-size: 9pt;
+            color: #B2B6B2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+        }
+
+        .footer-contact-card {
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+            background-color: rgba(13, 19, 12, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 25px;
+        }
+
+        .footer-contact-card h4 {
+            font-size: 11pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 15px;
         }
 
-        .footer-brand-title {
-            font-size: 20pt;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .footer-brand-subtitle {
-            font-size: 9pt;
-            text-transform: uppercase;
-            color: #B2B6B2;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
-        }
-
-        .footer-contact-block {
-            max-width: 600px;
-            margin: 0 auto 50px auto;
-            background-color: rgba(13, 19, 12, 0.6);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            padding: 30px;
-        }
-
-        .footer-contact-block h3 {
-            font-size: 12pt;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .footer-contact-block a, .footer-contact-block p {
-            font-size: 12pt;
+        .footer-contact-card a, .footer-contact-card p {
+            font-size: 11pt;
             color: #F4F6F4;
             text-decoration: none;
             display: block;
-            margin-bottom: 12px;
-            font-family: 'Times New Roman', Times, serif;
-            letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
-        .footer-contact-block a:hover {
+        .footer-contact-card a:hover {
             color: #D4AF37;
         }
 
         .footer-nav {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .footer-nav a {
             color: #B2B6B2;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 9pt;
+            font-size: 9.5pt;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: color 0.3s;
@@ -538,37 +457,47 @@
 
         .copyright {
             font-size: 8.5pt;
-            color: #525652;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding-top: 30px;
-            letter-spacing: 0.5px;
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 900px) {
-            .story-container { display: block; }
-            .story-row { display: block; }
-            .story-image-cell, .story-text-cell { display: block; width: 100%; }
-            .story-image-cell { min-height: 300px; }
-            .story-text-cell { padding: 40px 25px; }
+            color: #626662;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
         }
 
         @media (max-width: 768px) {
-            header { text-align: center; padding: 15px 5%; }
-            .header-cell { display: block; width: 100% !important; }
-            .brand-container { justify-content: center; margin-bottom: 15px; }
-            .nav-links { text-align: center; }
-            .nav-links a { margin: 0 10px; font-size: 8.5pt; }
-            
-            .hero { padding: 180px 5% 100px 5%; }
-            .hero h1 { font-size: 22pt; }
-            
-            .process-table, .product-table, .countries-table, .testimonials-container {
+            .origen-grid {
                 flex-direction: column;
-                gap: 25px;
+                gap: 30px;
             }
-            .product-card { max-width: 400px; margin: 0 auto; }
-            .global-box { padding: 30px 20px; }
+            .process-table, .product-table, .countries-table {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .footer-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-links {
+                text-align: center;
+                margin-top: 15px;
+            }
+            .nav-links a {
+                margin: 0 10px;
+            }
+            header {
+                position: static;
+                display: block;
+            }
+            .header-cell {
+                display: block;
+                width: 100% !important;
+                text-align: center;
+            }
+            .brand-link {
+                justify-content: center;
+            }
+            .hero {
+                padding: 120px 5% 80px 5%;
+            }
         }
     </style>
 </head>
@@ -576,8 +505,8 @@
 
     <header>
         <div class="header-cell" style="width: 40%;">
-            <a href="#" class="brand-container">
-                <img src="logo.png" alt="Logo Café Tabi Dorado" class="brand-logo">
+            <a href="#" class="brand-link">
+                <img src="img/logo.png" alt="Logo Tabi Dorado" class="header-logo">
                 <span class="brand-text">Tabi Dorado</span>
             </a>
         </div>
@@ -590,15 +519,13 @@
     </header>
 
     <section class="hero">
-        <img src="logo.png" alt="Sello Tabi Dorado" class="hero-watermark">
-        
+        <img src="img/logo.png" alt="Sello de Agua Tabi Dorado" class="hero-watermark">
         <div class="hero-content">
-            <span class="premium-badge">Origen Único — Café de Especialidad</span>
+            <span class="specialty-badge">Café de Especialidad — Origen Único</span>
             <h1>El lujo no se fabrica,<br>se cultiva a 1.500 metros de altura</h1>
             <p>Café de especialidad de autor variedad Tabi. Nacido en la mística de la Finca El Encanto (Calarcá, Quindío), donde la pureza de las montañas, la altura perfecta y la tierra viva esculpen el sabor y aroma perfecto.</p>
             <a href="https://wa.me/573245467759?text=Hola%20Tabi%20Dorado,%20quiero%20vivir%20la%20experiencia%20sensorial%20de%20nuestro%20caf%C3%A9" class="btn">Pedir ahora por WhatsApp</a>
         </div>
-        
         <svg class="mountain-bg" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,96L120,85.3C240,75,480,53,720,64C960,75,1200,117,1320,138.7L1440,160L1440,150L1320,150C1200,150,960,150,720,150C480,150,240,150,120,150L0,150Z"></path>
         </svg>
@@ -606,43 +533,33 @@
 
     <section class="section" id="origen" style="background-color: #0A0E09;">
         <h2 class="section-title">Nuestra Cuna de Autor</h2>
-        
-        <div class="story-container">
-            <div class="story-row">
-                <div class="story-image-cell" title="Cafetales en Finca El Encanto, Calarcá">
-                    -->
-                </div>
-                <div class="story-text-cell">
-                    <p>
-                        En la <strong>Finca El Encanto</strong>, ubicada en la imponente cordillera de Calarcá, Quindío, el tiempo corre a un ritmo diferente. La pureza de las corrientes de aire andinas, la riqueza orgánica del suelo volcánico y la altitud idónea de 1.500 msnm crean un ecosistema único en el mundo.<br><br>
-                        Aquí, cada cafeto de la variedad selecta Tabi se nutre con el esmero de una cultura de autor que protege el grano desde la siembra hasta su transformación final, garantizando una experiencia sensorial inigualable en cada taza.
-                    </p>
-                </div>
+        <div class="origen-grid">
+            <div class="origen-img-box">
+                <img src="img/caficultor-cosecha.jpg" alt="Caficultor trabajando la tierra en Calarcá">
+            </div>
+            <div class="origen-text-box">
+                <p style="font-size: 11.5pt; color: #D2D6D2; text-align: justify; text-justify: inter-word;">
+                    En la <strong>Finca El Encanto</strong>, ubicada en la imponente cordillera de Calarcá, Quindío, el tiempo corre a un ritmo diferente. La pureza de las corrientes de aire andinas, la riqueza orgánica del suelo volcánico y la altitud idónea de 1.500 msnm crean un ecosistema único en el mundo. Aquí, cada cafeto de la variedad selecta Tabi se nutre con el esmero de una cultura de autor que protege el grano desde la siembra hasta su transformación final, garantizando una experiencia sensorial inigualable en cada taza.
+                </p>
             </div>
         </div>
     </section>
 
-    <section class="section" id="proceso" style="background-color: #0D130C;">
+    <section class="section" id="proceso">
         <h2 class="section-title">El Viaje de la Semilla</h2>
-        
         <div class="process-table">
             <div class="process-card">
-                <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?q=80&w=500&auto=format&fit=crop" alt="Cosecha Selectiva" class="process-img">
-                -->
+                <img src="img/caficultor-cosecha.jpg" alt="Cosecha selectiva manual" class="process-card-img">
                 <h3>01. Cosecha Selectiva</h3>
                 <p>Nuestras manos recolectan exclusivamente las cerezas Tabi en su estado óptimo de madurez. Un trabajo artesanal y riguroso que honra el equilibrio natural de la Finca El Encanto.</p>
             </div>
-            
             <div class="process-card">
-                <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=500&auto=format&fit=crop" alt="Alquimia Natural" class="process-img">
-                -->
+                <img src="img/granos-macro.jpg" alt="Secado lento natural al sol" class="process-card-img">
                 <h3>02. Alquimia Natural</h3>
                 <p>El café se deshidrata al sol de Calarcá con su fruta completa. Un secado lento y limpio que permite que la semilla absorba de forma mística todos los azúcares y notas cítricas de la pulpa.</p>
             </div>
-            
             <div class="process-card">
-                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=500&auto=format&fit=crop" alt="Tostión de Autor" class="process-img">
-                -->
+                <img src="img/granos-macro.jpg" alt="Curva de tostión controlada" class="process-card-img">
                 <h3>03. Tostión y Empaque</h3>
                 <p>Llevamos el grano a un perfil de tueste medio diseñado milimétricamente para resaltar su acidez brillante y cuerpo sedoso, empacándolo al instante para sellar su pureza dorada.</p>
             </div>
@@ -651,77 +568,55 @@
 
     <section class="section" id="coleccion" style="background-color: #0A0E09;">
         <h2 class="section-title">Nuestra Colección</h2>
-        
         <div class="product-table">
             <div class="product-card">
-                <span class="product-badge">Lote Exótico — Tabi Natural</span>
-                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=400&auto=format&fit=crop" alt="Presentación 250g" class="product-img">
-                -->
+                <img src="img/bolsa-250g.jpg" alt="Café Tabi Dorado presentación de 250 gramos" class="product-card-img">
+                <span class="product-badge">Tostado de Autor</span>
                 <h3>Presentación 250g</h3>
-                <p class="product-desc">Medida de Culto. Perfecta para adentrarse en los perfiles exóticos y la dulzura del Tabi Natural. Disponible en grano o molienda personalizada.</p>
+                <p class="product-desc">Medida de Culto. Perfecta para adentrarse en los perfiles exóticos y la dulzura del Tabi Natural. Grano o molido.</p>
                 <div class="product-price">$28.000 COP</div>
                 <a href="https://wa.me/573245467759?text=Hola,%20quiero%20ordenar%20la%20Presentaci%C3%B3n%20de%20250g" class="btn btn-sm">Ordenar Lote</a>
             </div>
-
             <div class="product-card">
-                <span class="product-badge">Lote Exótico — Tabi Natural</span>
-                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=400&auto=format&fit=crop" alt="Presentación 500g" class="product-img">
-                -->
+                <img src="img/bolsa-500g.jpg" alt="Café Tabi Dorado presentación de 500 gramos" class="product-card-img">
+                <span class="product-badge">Tostado de Autor</span>
                 <h3>Presentación 500g</h3>
-                <p class="product-desc">Reserva del Catador. Diseñado para quienes incorporan la sofisticación del Quindío en su ritual diario. Disponible en grano o molienda personalizada.</p>
+                <p class="product-desc">Reserva del Catador. Diseñado para quienes incorporan la sofisticación del Quindío en su ritual diario. Grano o molido.</p>
                 <div class="product-price">$52.000 COP</div>
                 <a href="https://wa.me/573245467759?text=Hola,%20quiero%20ordenar%20la%20Presentaci%C3%B3n%20de%20500g" class="btn btn-sm">Ordenar Lote</a>
             </div>
-
             <div class="product-card">
+                <img src="img/granos-macro.jpg" alt="Café en estado pergamino selecto" class="product-card-img">
                 <span class="product-badge">Línea Purista</span>
-                <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=400&auto=format&fit=crop" alt="Café Pergamino" class="product-img">
-                -->
                 <h3>Café Pergamino</h3>
-                <p class="product-desc">Para los conocedores, tostadores artesanales y laboratorios que buscan experimentar el alma verde del Tabi en su estado más puro antes del fuego.</p>
-                <div class="product-price">Consultar Lote</div>
+                <p class="product-desc">Para los conocedores que buscan experimentar el alma verde del Tabi en su estado más puro antes del fuego.</p>
+                <div class="product-price">Consultar</div>
                 <a href="https://wa.me/573245467759?text=Hola,%20solicito%20informaci%C3%B3n%20sobre%20el%20Caf%C3%A9%20Pergamino" class="btn btn-sm">Consultar</a>
             </div>
-
             <div class="product-card">
-                <span class="product-badge">Exclusividad Institucional</span>
-                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=400&auto=format&fit=crop" alt="Paquete Súper 2.500g" class="product-img">
-                -->
+                <img src="img/bolsa-2500g.jpg" alt="Café Tabi Dorado paquete súper de 2500 gramos institucional" class="product-card-img">
+                <span class="product-badge">Institucional</span>
                 <h3>Paquete Súper 2.500g</h3>
-                <p class="product-desc">Edición de Gran Volumen. Diseñada selectivamente para oficinas premium, consultorios de alto nivel, hoteles boutique y aliados gastronómicos.</p>
-                <div class="product-price">Cotizar Volumen</div>
+                <p class="product-desc">Edición Exclusiva para oficinas premium, consultorios de alto nivel, hoteles boutique y aliados selectos.</p>
+                <div class="product-price">Cotizar</div>
                 <a href="https://wa.me/573245467759?text=Hola,%20me%20gustar%C3%ADa%20cotizar%20el%20Paquete%20S%C3%BAper%20Institucional%20de%202500g" class="btn btn-sm">Solicitar Cotización</a>
             </div>
         </div>
 
-        <div class="editorial-line"></div>
-
-        <div class="video-container">
-            <video controls muted poster="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800">
-                <source src="preparacion-cafe.mp4" type="video/mp4">
-                Tu navegador no soporta la reproducción de video.
-            </video>
+        <div class="media-container">
+            <video src="video/preparacion-cafe.mp4" controls muted playsinline></video>
         </div>
 
-        -->
-        <div class="testimonials-container">
-            <div class="testimonial-item">
-                <p>"Un café que redefine el concepto de origen. Su cuerpo sedoso y notas cítricas lo convierten en una obra de arte líquida."</p>
-                <span style="display:block; margin-top:10px; color:#D4AF37; font-size:8.5pt; text-transform:uppercase;">— Cata Privada, Bogotá</span>
+        <div class="testimonials-area">
             </div>
-            <div class="testimonial-item">
-                <p>"El formato institucional de 2.500g ha elevado drásticamente la experiencia de bienvenida en nuestro estudio corporativo."</p>
-                <span style="display:block; margin-top:10px; color:#D4AF37; font-size:8.5pt; text-transform:uppercase;">— Estudio Boutique, Medellín</span>
-            </div>
-        </div>
     </section>
 
-    <section class="section" id="global" style="background-color: #0D130C;">
+    <section class="section" id="global">
         <div class="global-box">
             <h2 style="font-size: 18pt; margin-bottom: 15px; text-transform: uppercase;">Expansión Global</h2>
-            <p>La pureza de Calarcá cruza fronteras. Contamos con esquemas logísticos internacionales directos para llevar la mística de Finca El Encanto a cualquier rincón del mundo.</p>
+            <p>La pureza de Calarcá cruza fronteras. Contamos con envíos internacionales directos para llevar la mística de Finca El Encanto a cualquier rincón del mundo.</p>
             
-            <h3 style="font-size: 10pt; text-transform: uppercase; margin-bottom: 20px; color: #B2B6B2; letter-spacing: 2px;">Próximos Puntos de Distribución Física:</h3>
+            <h3 style="font-size: 12pt; text-transform: uppercase; margin-bottom: 20px; color: #B2B6B2; letter-spacing: 2px;">Próximamente Puntos de Venta Físicos:</h3>
             <div class="countries-table">
                 <div class="country-item">🇺🇸 Estados Unidos</div>
                 <div class="country-item">🇲🇽 México</div>
@@ -731,37 +626,32 @@
 
             <div class="distributor-cta">
                 <h4>¿Quieres ser Distribuidor Premium?</h4>
-                <p style="font-size: 10pt; margin-bottom: 25px; max-width:650px; margin: 0 auto 25px auto;">Ofrecemos asignación de lotes preferenciales, trazabilidad de origen absoluta y soporte de marca exclusivo para tiendas de diseño, concept stores y boutiques culinarias de alto nivel.</p>
-                <a href="https://wa.me/573245467759?text=Hola,%20estoy%20interesado%20en%20aplicar%20como%20Distribuidor%20Premium" class="btn">Aplicar Al Programa</a>
+                <p style="font-size: 10pt; margin-bottom: 20px;">Ofrecemos lotes preferenciales y trazabilidad absoluta para tiendas de diseño, boutiques de café y aliados comerciales de alto nivel en todo el mundo.</p>
+                <a href="https://wa.me/573245467759?text=Hola,%20estoy%20interesado%20en%20aplicar%20como%20Distribuidor%20Premium" class="btn">Aplicar Ahora</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <a href="#">
-            <img src="logo.png" alt="Logo Insignia Café Tabi Dorado" class="footer-logo-center">
-        </a>
-        <h2 class="footer-brand-title">Café Tabi Dorado</h2>
-        <div class="footer-brand-subtitle">Cultura de Autor — Finca El Encanto</div>
+        <img src="img/logo.png" alt="Sello Tabi Dorado Footer" class="footer-logo">
+        <div class="footer-brand-name">Café Tabi Dorado</div>
+        <div class="footer-subtitle">Finca El Encanto — Calarcá, Quindío</div>
 
-        <div class="footer-contact-block">
-            <h3>Canales Oficiales de Pedido</h3>
-            <a href="https://wa.me/573245467759?text=Hola%20Tabi%20Dorado,%20solicito%20asistencia%20comercial" target="_blank">WhatsApp: +57 324 546 7759</a>
+        <div class="footer-contact-card">
+            <h4>Canales Oficiales</h4>
+            <a href="https://wa.me/573245467759?text=Hola%20Tabi%20Dorado,%20necesito%20asistencia" target="_blank">WhatsApp: +57 324 546 7759</a>
             <a href="mailto:cafetabidorado@gmail.com">Email: cafetabidorado@gmail.com</a>
             <a href="https://instagram.com/cafetabidorado" target="_blank">Instagram: @cafetabidorado</a>
-            <p style="font-size: 10pt; color: #626662; margin-top: 15px; font-family: sans-serif;">Calarcá, Quindío, Colombia</p>
         </div>
 
         <div class="footer-nav">
             <a href="#origen">Nuestro Origen</a>
             <a href="#proceso">El Proceso Natural</a>
             <a href="#coleccion">Colección Completa</a>
-            <a href="#global">Aliados Comerciales</a>
         </div>
 
         <div class="copyright">
-            cafetabidorado.shop &copy; 2026. Todos los derechos reservados.<br>
-            Cultivado, Procesado y Diseñado con Orgullo en el Eje Cafetero, Colombia.
+            cafetabidorado.shop &copy; 2026. Todos los derechos reservados. Cultivado, Procesado y Diseñado con Orgullo en el Quindío, Colombia.
         </div>
     </footer>
 
